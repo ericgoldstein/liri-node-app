@@ -62,7 +62,7 @@ var getMeMovie = function(movieName) {
 
 
 
-request('http://www.omdbapi.com/?t=' + movieName + '&y=&plot=short&r=json', function (error, response, body) {
+request('http://www.omdbapi.com/?t=' + movieName + '&y=&plot=short&apikey=trilogy', function (error, response, body) {
   if (!error && response.statusCode == 200) {
   	var jsonData = JSON.parse(body);
 
@@ -105,6 +105,7 @@ var pick = function(caseData, functionData) {
 		break;
 		case 'movie-this':
 			getMeMovie(functionData);
+		break;
 		case 'do-what-it-says':
 			doWhatItSays();
 			break;
